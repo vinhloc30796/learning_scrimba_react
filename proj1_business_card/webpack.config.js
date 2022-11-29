@@ -1,25 +1,45 @@
+const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
+const path = require( 'path' );
+
 module.exports = {
-  "output": {
-    "filename": "[name].pack.js"
+  context: __dirname,
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist' ),
+    filename: 'main.js',
+    publicPath: "/"
   },
-  "module": {
-    "rules": [
+  devServer: {
+    static: [
+      path.resolve(__dirname, 'dist' ),
+      path.resolve(__dirname, 'public' ),
+    ],
+    port: 3000,
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
+  },
+  module: {
+    rules: [
       {
-        "use": {
-          "loader": "babel-loader",
-          "options": {
-            "presets": [
-              "babel-preset-env",
-              "babel-preset-react"
-            ]
-          }
-        },
-        "exclude": /node_modules/,
-        "test": /\.js$/
+        test: /\.js$/,
+        use: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|j?g|svg|gif)?$/,
+        use: 'file-loader'
       }
-    ]
+    ] 
   },
-  "entry": {
-    "index": "./index"
-  }
+  plugins: [
+    new HtmlWebPackPlugin({
+        template: path.resolve( __dirname, 'public/index.html' ),
+        filename: 'index.html'
+    })
+  ]
 };
