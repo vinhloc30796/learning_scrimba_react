@@ -9,12 +9,12 @@ import Footer from "./components/Footer"
 
 
 export default function App() {
-    return <div className="bg-black">
+    return <div className="bg-black float my-[0px] py-px">
         <Card>
-            <Info/>
-            <About/>
-            <Interests/>
-            <Footer/>
+            <Info />
+            <About />
+            <Interests />
+            <Footer />
         </Card>
     </div>
 }
