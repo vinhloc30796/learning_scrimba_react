@@ -3,6 +3,8 @@ import React from "react"
 export default function Interests() {
     return <div>
         <h2 className="text-white text-3xl font-bold mt-3">Interests</h2>
-        <p className="text-slate-300 mt-2 mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p className="text-slate-300 mt-2 mb-12">
+            Web3 (DAO Ops, DeFi, Infra); Fintech (Payments, Wealth, Trading); ML (MLOps, Time series, Tabular); Full-stack (FastAPI, React, Next)
+        </p>
     </div>
 }
