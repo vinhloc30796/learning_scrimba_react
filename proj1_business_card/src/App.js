@@ -12,8 +12,10 @@ export default function App() {
     return <div className="bg-black float my-[0px] py-px">
         <Card>
             <Info />
-            <About />
-            <Interests />
+            <div className="mx-6 mt-6">
+                <About />
+                <Interests />
+            </div>
             <Footer />
         </Card>
     </div>
